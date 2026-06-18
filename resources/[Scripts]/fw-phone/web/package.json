@@ -31,7 +31,6 @@
     "@ckeditor/ckeditor5-editor-balloon": "^35.2.0",
     "jquery": "^3.6.0",
     "luxon": "^3.3.0",
-    "sass": "^7.0.1",
     "sirv-cli": "^1.0.0",
     "tslib": "^2.5.0"
   }

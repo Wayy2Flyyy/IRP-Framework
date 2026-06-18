@@ -21,7 +21,6 @@
     "svelte-preprocess": "^4.10.7"
   },
   "dependencies": {
-    "sass": "^7.0.1",
     "sirv-cli": "^1.0.0"
   }
 }
