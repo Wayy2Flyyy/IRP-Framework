@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Robijn Inventory</title>
+    <meta name="referrer" content="no-referrer">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="inventory-hotbar"></div>
+    <div class="inventory-boxbar">
+        <div class="inventory-boxbar-slot">
+            <div class="inventory-slot-text">Added 3x</div>
+            <div class="inventory-slot-name">Sandwich</div>
+            <div class="inventory-slot-image" style="background-image: url('./images/f_sandwich.png')"></div>
+        </div>
+    </div>
+
+    <div class="inventory-wrapper">
+        <div class="logs"></div>
+        <div class="inventory-slot-hover"></div>
+
+        <div class="drag-item inventory-box-slot"></div>
+
+        <div class="containers-wrapper">
+            <div inventory-name="player" id="player-inventory" class="inventory-box">
+                <div class="inventory-box-header">
+                    <div class="inventory-box-header-name">Player</div>
+                    <div class="inventory-box-header-weight"><span>0</span>/250</div>
+                    <div class="inventory-box-header-weightbar"><div class="weightbar-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="inventory-box-slots"></div>
+            </div>
+
+            <div class="actions-wrapper">
+                <div class="inventory-actions">
+                    <input tabindex="-1" type="number" id="inventory-move-amount" max="9999" min="0" placeholder="Aantal">
+                    <button class="inventory-actions-btn" id="inventory-use" style="margin: 0.5vh 0;"></button>
+                    <button class="inventory-actions-btn" id="inventory-close">Close</button>
+                </div>
+            </div>
+
+            <div inventory-name="other" id="secondary-inventory" class="inventory-box">
+                <div class="inventory-box-header">
+                    <div class="inventory-box-header-name">Ground</div>
+                    <div class="inventory-box-header-weight"><span>0</span>/250</div>
+                    <div class="inventory-box-header-weightbar"><div class="weightbar-fill" style="width: 0%;"></div></div>
+                </div>
+                <div class="inventory-box-cash">You have <span>69</span> to spend.</div>
+                <div class="inventory-box-slots"></div>
+            </div>
+        </div>
+
+        <div class="inventory-bottom-actions">
+            <div id="inventory-action-help" class="inventory-bottom-actions-button">?</div>
+        </div>
+
+        <div class="inventory-help-menu">
+            <h3>About:</h3>
+            <p>
+
+                To move a full item stack, you need to make sure the "AMOUNT"-field is empty or greater than the full stack size.<br />
+                To adjust the amount you want to move, use the mouse wheel while hovering over the "AMOUNT"-field.<br />
+                To use an item, press the mouse wheel or drop the item on the "USE" button.<br />
+            </p>
+            <h3>Keybinds:</h3>
+            <ul>
+                <li>Shift + Click: Move half of the stack to the other container.</li>
+                <li>Ctrl + Click: Move the amount that is specified in the "AMOUNT"-field to the other container.</li>
+                <li>Left Click: Move Item</li>
+                <li>Middle Click: Fast-Use Item</li>
+                <hr />
+                <li>C: Clear "AMOUNT"-field.</li>
+                <li>Ctrl + C: Copy item data to clipboard</li>
+            </ul>
+            <h3>Stores:</h3>
+            <p>Set the "AMOUNT"-field to the amount of the items you want to buy, then move the item to your characters container.</p>
+            <h3>Crafting:</h3>
+            <p>
+                Make sure to remember the requirements.<br />
+                When crafting, you must specify the exact amount you want to craft, if you want to craft more than the amount the crafting bench has available, it will craft the maximum amount of the crafting bench.<br />
+            </p>
+            <h3>Item Durability:</h3>
+            <p>
+                Almost all items will decay over time. <i>(weapons included)</i>.</br>
+                The current durability of an item is shown at the bottom of the item slot. It will slowly decrease in size until it fades into a red color, once a item is fully decayed, the entire slot will turn red.
+            </p>
+        </div>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/draghandler.js"></script>
+</body>
+</html>
